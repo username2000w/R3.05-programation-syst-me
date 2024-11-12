@@ -4,6 +4,9 @@ fn main() {
 
     print_first_word1(sentence1);
     print_first_word1(sentence2);
+
+    println!("{}", String::from(print_first_word2(sentence1)));
+    // println!("{}", String::from(print_first_word2(sentence2)));
 }
 
 fn print_first_word1(sentence: &str) {
@@ -11,4 +14,8 @@ fn print_first_word1(sentence: &str) {
         "" => println!("Chaine vide"),
         _ => println!("Premier mot: {}", sentence.split(" ").next().unwrap()),
     }
+}
+
+fn print_first_word2(sentence: &str) -> &str {
+    sentence.split_whitespace().next().expect("La chaîne dois être non vide")
 }
