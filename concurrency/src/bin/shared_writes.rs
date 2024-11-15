@@ -1,4 +1,5 @@
-use std::sync::{Arc, RwLock};
+use std::sync::Arc;
+use tokio::sync::RwLock;
 
 use clap::Parser;
 
@@ -18,7 +19,7 @@ async fn main() {
         let number_clone = Arc::clone(&number);
         
         let task = tokio::spawn(async move {
-            let mut number_clone = number_clone.write().unwrap();
+            let mut number_clone = number_clone.write().await;
 
             println!("Hello {}", number_clone);
             println!("Au revoir {}", number_clone);
