@@ -21,8 +21,8 @@ fn print_references() {
     let x = 18;
     // let ref1 = &x;
     // let ref2 = &x;
-    let mut ref3 = &x;
-    let mut ref4 = &x;
+    let ref3 = &x;
+    let ref4 = &x;
     println!("{} {}", ref3, ref4)
 }
 
